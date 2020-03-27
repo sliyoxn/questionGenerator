@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="./util/fileutil.js"></script>
+    <script src="./util/browserTypeUtil.js"></script>
+    <script src="./util/clone.js"></script>
+    <script src="./util/randomUtil.js"></script>
+
+
+</head>
+<body>
+
+    <div id="app">
+        <div class="top-box">
+            <div class="range-setter-box">
+                <p class="text">请输入生成随机数的范围 : </p>
+                <el-input-number v-model="from" controls-position="right" :min="1" :max="to - 1"></el-input-number>
+                <p>&nbsp;&nbsp;~&nbsp;&nbsp;</p>
+                <el-input-number v-model="to" controls-position="right" :min="from + 1"></el-input-number>
+                <el-button type="primary">生成</el-button>
+            </div>
+        </div>
+        <div class="center-box">
+            <textarea id="textBox" class="topic-box" v-model="topic"></textarea>
+        </div>
+        <div class="bottom-box">
+            <el-button type="primary" @click="downloadTopic">下 载 题 目</el-button>
+            <div class="standard-answer-box">
+                <p>标准答案</p>
+                <el-input :value="standardAnswer"></el-input>
+                <el-button type="primary" v-model="studentAnswer" @click="downloadStandardAnswer">下 载 标 准 答 案</el-button>
+            </div>
+            <div class="answer-box">
+                <p>学生答案</p>
+                <el-input v-model="studentAnswer"></el-input>
+                <el-button type="primary" @click="loadStudentAnswer">从 文 件 中 读 取</el-button>
+            </div>
+            <el-button type="primary" >判 卷</el-button>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="./index.js"></script>
+
+</body>
+</html>
