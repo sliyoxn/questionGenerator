@@ -134,7 +134,6 @@ class Fraction {
 	 * @returns {Fraction|null}
 	 */
 	static calculate(num1, num2, operator) {
-		console.log(num1, num2);
 		if (typeof num1 === "number" || typeof num1 === "string")
 			num1 = Fraction.fromString(num1.toString());
 		if (typeof num2 === "number" || typeof num2 === "string")
@@ -147,27 +146,40 @@ class Fraction {
 			case "*" :
 				return Fraction.multiply(num1, num2);
 			case "/" :
-				return Fraction.multiply(num1, num2);
+				return Fraction.divide(num1, num2);
 			default :
 				return null;
 		}
 	}
 
 	/**
-	 * 从字符串解析出分数, 支持1, 1/2, 1'1/2的形式
+	 * 从字符串解析出分数, 支持1, 1/2, 1'1/2, -2'2/3的形式
 	 * @param str
 	 * @return {Fraction}
 	 */
 	static fromString(str = '') {
-		let int = 1;
+		let int = 0;
+		str = str.trim();
+		// 判断是否为负数
+		let flag = str[0] === "-";
+		let numerator = 0;
+		let denominator = 1;
+		if (flag) {
+			str = str.slice(1);
+		}
 		if (str.indexOf("'") !== -1) {
 			int = Number.parseInt(str.split("'")[0]);
 			str = str.split("'")[1];
 		}
 		let arr = str.split('/').map(Number).filter(Number.isInteger);
-		if (arr.length === 1) arr.push(1);
-		if (arr.length !== 2) throw TypeError('params must be 2 Integer spread by "/"');
-		return new Fraction(arr[0] + (int * arr[1]), arr[1]);
+		if (arr.length !== 1) denominator = arr[1];
+		numerator = arr[0];
+		if (flag) {
+			numerator = - int * denominator - numerator;
+		} else {
+			numerator = int * denominator + numerator;
+		}
+		return new Fraction(numerator, denominator);
 	}
 
 	/**
@@ -185,15 +197,15 @@ class Fraction {
 	 * 导出格式  a/b
 	 * @return {string}
 	 */
-	toString(noSpace = false) {
-		if (noSpace) {
-			return `${this.numerator}/${this.denominator}`;
-		} else {
-			return `${this.numerator} / ${this.denominator}`
+	toString() {
+		// console.log(this.numerator, this.denominator);
+		if (this.denominator === 1) {
+			return `${this.numerator}`;
 		}
+		return `${this.numerator}/${this.denominator}`;
 	}
 
-	toMixedString(noSpace = false) {
+	toMixedString() {
 		let numerator = this.numerator;
 		let denominator = this.denominator;
 		if (this.numerator < this.denominator) {
@@ -202,9 +214,7 @@ class Fraction {
 		let int = Math.floor(this.numerator / this.denominator);
 		let newNumerator = this.numerator - int * this.denominator;
 		let newFraction = newNumerator ? `${newNumerator}/${this.denominator}` : '';
-
-		let str = newFraction !== "" ? `${int} ' ${newNumerator} / ${this.denominator}` : int.toString();
-		if (noSpace) str = str.replace(/\s/gm, "");
+		let str = newFraction !== "" ? `${int}'${newNumerator}/${this.denominator}` : int.toString();
 		return str;
 	}
 
@@ -215,5 +225,8 @@ class Fraction {
 // // console.log(frac);
 // console.log(frac.toMixedString());
 // console.log(Fraction.fromString('3'));
-console.log(Fraction.fromString("10'2/3"));
+// console.log(Fraction.fromString("-10'2/3"));
+// console.log(Fraction.calculate("5 * -76/9"));
+// console.log(Fraction.)
 
+// console.log(Fraction.fromString("-76/9"));

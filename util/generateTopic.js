@@ -1,35 +1,41 @@
 function generateTopic(from, to, count) {
 	let str = "";
+	let answerArr = [];
 	for (let i = 0; i < count; i++) {
-		let leftVal = getRandom(from, to);
+		let leftVal = getRandomOperand(from, to);
 		let operatorCount = getRandomOperatorCount();
 		let useBracket = false;
 		let bracketIndex = getRandom(1,2);
-
 		if (operatorCount === 2) {
 			useBracket = !!getRandom(0,1)
 		}
+		let expression = '';
 		if (useBracket && bracketIndex === 1) {
-			str += "(";
+			expression += "(";
 		}
-		str += leftVal;
+		expression += leftVal;
 		for (let j = 1; j <= operatorCount; j++) {
 			let operator = getRandomOperator();
 			let rightVal = getRandomOperand(from, to);
 			if (useBracket && j === 1 && bracketIndex === 2) {
-				str += ` ${operator} (${rightVal}`
+				expression += ` ${operator} (${rightVal}`
 			} else {
-				str += ` ${operator} ${rightVal}`;
+				expression += ` ${operator} ${rightVal}`;
 			}
 			if (useBracket && j === bracketIndex) {
-				str += ")";
+				expression += ")";
 			}
 		}
+		str += expression;
+		answerArr.push(calEval(expression));
 		str += "\n";
 	}
-	return str.slice(0, str.length - 1)
+	return {
+		text : str.slice(0, str.length - 1),
+		answer : answerArr
+	}
 }
-// PS: '='为赋值运算符, 所以"+","-","*","/"最多有两个
+
 // 获取操作符的个数
 function getRandomOperatorCount() {
 	return getRandom(1,2);
@@ -61,10 +67,13 @@ function getRandomOperand(from, to) {
 	let isFraction = !!getRandom(0,1);
 	if (isFraction) {
 		let denominator = getRandom(from, to);
-		let mixed = Fraction.getMixedFraction(
-			getRandom(from, to),
-			getRandom(from, denominator),
-			denominator).toMixedString(true);
+		let mixed = to + 1;
+		while (Fraction.calculate(to, mixed, "-").toString() < 0) {
+			mixed = Fraction.getMixedFraction(
+				getRandom(from, to),
+				getRandom(from, denominator),
+				denominator).toMixedString();
+		}
 		return mixed;
 	} else {
 		return getRandom(from, to);
