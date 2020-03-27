@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="util/Constants.js"></script>
     <script src="./util/fileutil.js"></script>
+    <script src="bean/Fraction.js"></script>
     <script src="./util/browserTypeUtil.js"></script>
     <script src="./util/clone.js"></script>
     <script src="./util/randomUtil.js"></script>
+    <script src="util/generateTopic.js"></script>
+    <script src="util/calEval.js"></script>
 
 
 </head>
@@ -20,11 +24,13 @@
 
     <div id="app">
         <div class="top-box">
-            <div class="range-setter-box">
+            <div class="options-box">
                 <p class="text">请输入生成随机数的范围 : </p>
                 <el-input-number v-model="from" controls-position="right" :min="1" :max="to - 1"></el-input-number>
                 <p>&nbsp;&nbsp;~&nbsp;&nbsp;</p>
                 <el-input-number v-model="to" controls-position="right" :min="from + 1"></el-input-number>
+                <p class="rua">题目个数 : </p>
+                <el-input-number v-model="count" controls-position="right" :min="1"></el-input-number>
                 <el-button type="primary">生成</el-button>
             </div>
         </div>
@@ -43,7 +49,7 @@
                 <el-input v-model="studentAnswer"></el-input>
                 <el-button type="primary" @click="loadStudentAnswer">从 文 件 中 读 取</el-button>
             </div>
-            <el-button type="primary" >判 卷</el-button>
+            <el-button type="primary">判 卷</el-button>
         </div>
 
 
@@ -52,6 +58,10 @@
 
 
     <script src="./index.js"></script>
-
+    <script>
+        window.onerror = function (error) {
+            Vue.prototype.$message.error(error);
+		}
+    </script>
 </body>
 </html>

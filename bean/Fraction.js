@@ -55,13 +55,7 @@ class Fraction {
 		return this;
 	}
 
-	/**
-	 * 导出格式  a/b
-	 * @return {string}
-	 */
-	toString() {
-		return `${this.numerator}/${this.denominator}`;
-	}
+
 
 
 	get value() {
@@ -133,6 +127,33 @@ class Fraction {
 	}
 
 	/**
+	 *
+	 * @param {Number|Fraction|String} num1
+	 * @param {Number|Fraction|String} num2
+	 * @param {"+","-","*","/"} operator
+	 * @returns {Fraction|null}
+	 */
+	static calculate(num1, num2, operator) {
+		console.log(num1, num2);
+		if (typeof num1 === "number" || typeof num1 === "string")
+			num1 = Fraction.fromString(num1.toString());
+		if (typeof num2 === "number" || typeof num2 === "string")
+			num2 = Fraction.fromString(num2.toString());
+		switch (operator) {
+			case "+" :
+				return Fraction.add(num1, num2);
+			case "-" :
+				return Fraction.subtract(num1, num2);
+			case "*" :
+				return Fraction.multiply(num1, num2);
+			case "/" :
+				return Fraction.multiply(num1, num2);
+			default :
+				return null;
+		}
+	}
+
+	/**
 	 * 从字符串解析出分数, 支持1, 1/2, 1'1/2的形式
 	 * @param str
 	 * @return {Fraction}
@@ -140,13 +161,59 @@ class Fraction {
 	static fromString(str = '') {
 		let int = 1;
 		if (str.indexOf("'") !== -1) {
-			int = str.split("'")[0];
+			int = Number.parseInt(str.split("'")[0]);
 			str = str.split("'")[1];
 		}
 		let arr = str.split('/').map(Number).filter(Number.isInteger);
 		if (arr.length === 1) arr.push(1);
 		if (arr.length !== 2) throw TypeError('params must be 2 Integer spread by "/"');
-		return new Fraction(arr[0] * int, arr[1]);
+		return new Fraction(arr[0] + (int * arr[1]), arr[1]);
 	}
 
+	/**
+	 * 使用真分数的参数创建对象
+	 * @param int
+	 * @param numerator
+	 * @param denominator
+	 */
+	static getMixedFraction(int, numerator, denominator) {
+		// console.log(`${int} ' ${numerator} / ${denominator}`);
+		return Fraction.fromString(`${int} ' ${numerator} / ${denominator}`)
+	}
+
+	/**
+	 * 导出格式  a/b
+	 * @return {string}
+	 */
+	toString(noSpace = false) {
+		if (noSpace) {
+			return `${this.numerator}/${this.denominator}`;
+		} else {
+			return `${this.numerator} / ${this.denominator}`
+		}
+	}
+
+	toMixedString(noSpace = false) {
+		let numerator = this.numerator;
+		let denominator = this.denominator;
+		if (this.numerator < this.denominator) {
+			return this.toString();
+		}
+		let int = Math.floor(this.numerator / this.denominator);
+		let newNumerator = this.numerator - int * this.denominator;
+		let newFraction = newNumerator ? `${newNumerator}/${this.denominator}` : '';
+
+		let str = newFraction !== "" ? `${int} ' ${newNumerator} / ${this.denominator}` : int.toString();
+		if (noSpace) str = str.replace(/\s/gm, "");
+		return str;
+	}
+
+
 }
+
+// let frac = Fraction.getMixedFraction(1,2,3);
+// // console.log(frac);
+// console.log(frac.toMixedString());
+// console.log(Fraction.fromString('3'));
+console.log(Fraction.fromString("10'2/3"));
+

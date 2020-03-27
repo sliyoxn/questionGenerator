@@ -5,7 +5,8 @@ let vm = new Vue({
 		to : 10,
 		topic : "",
 		standardAnswer : "",
-		studentAnswer : ""
+		studentAnswer : "",
+		count : 10
 	},
 	methods : {
 		downloadTopic() {

@@ -27,23 +27,23 @@ body {
     flex: 1 1;
 }
 
-.range-setter-box {
+.options-box {
     display: flex;
     width: 100%;
     align-items: center;
 }
-.range-setter-box .text {
+.options-box .text {
     min-width: 200px;
     flex: 0 0;
     font-size: 16px;
     align-items: center;
 }
-.range-setter-box .el-input {
+.options-box .el-input {
     display: flex;
     align-items: center;
 }
 
-.range-setter-box .el-button {
+.options-box .el-button {
     height: 40px;
     margin-left: 10px;
 }
@@ -72,7 +72,7 @@ body {
     padding-right: 10px;
 }
 
-.range-setter-box .el-input-number {
+.options-box .el-input-number {
     width: auto;
     flex: 1 1;
 }
@@ -82,8 +82,11 @@ body {
     margin-left: 10px;
 }
 
-
-
+.rua {
+    width: 75px;
+    margin-left: 15px;
+    margin-right: 10px;
+}
 
 
 
