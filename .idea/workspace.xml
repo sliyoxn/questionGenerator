@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49208d43-64d5-4788-ab7e-6020776b461a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/questionGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/questionGenerator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bean/Fraction.js" beforeDir="false" afterPath="$PROJECT_DIR$/bean/Fraction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/randomUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/randomUtil.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585292557219</updated>
-      <workItem from="1585292559238" duration="28125000" />
+      <workItem from="1585292559238" duration="29519000" />
     </task>
     <servers />
   </component>
