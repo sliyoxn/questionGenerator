@@ -26,8 +26,10 @@ function generateTopic(from, to, count) {
 				expression += ")";
 			}
 		}
+		let res = calEval(expression).val;
+		expression = res.str;
 		str += expression;
-		answerArr.push(calEval(expression));
+		answerArr.push();
 		str += "\n";
 	}
 	return {

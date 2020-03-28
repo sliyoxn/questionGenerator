@@ -2,10 +2,15 @@ function calEval(str = '') {
 
 	let hasBracket = /\([\w\W]+\)/.test(str);
 	let operatorCount = str.split(" ").length === 3 ? 1 : 2;
-	let sum = null;
+	let sum = -1;
+	let hasNegativeNumber = false;
 	if (operatorCount === 1) {
 		let arr = str.split(" ");
 		sum = Fraction.calculate(arr[0], arr[2], arr[1]);
+		if (sum < 0) {
+			str = arr[2] + " " + arr[1] + " " + arr[0];
+			sum = Fraction.calculate(arr[2], arr[0], arr[1]);
+		}
 	} else {
 		if (hasBracket) {
 			let startIndex = str.indexOf("(");
@@ -34,7 +39,11 @@ function calEval(str = '') {
 		}
 	}
 
-	return sum.toString();
+	return {
+		val : sum.toString(),
+		hasNegativeNumber,
+		str : str
+	};
 
 
 }
