@@ -87,7 +87,14 @@ body {
     margin-left: 15px;
     margin-right: 10px;
 }
+.topic-option-box {
+    width: 100%;
+    display: flex;
+}
 
+.topic-option-box .el-button {
+    flex: 1 1;
+}
 
 ::-webkit-scrollbar {
     width: 10px;

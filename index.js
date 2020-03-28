@@ -10,56 +10,122 @@ let vm = new Vue({
 		fileInputKey : 0,
 		tableData : [],
 		tableVisibility : false,
-		loading : false
+		loading : false,
+		isGenerating : false,
+		loadType : -1
 	},
 	methods : {
 		downloadTopic() {
-			downloadFile("题目.txt", this.topic);
+			this._downloadFile(this.topic)
 		},
 		downloadStandardAnswer() {
-			downloadFile("答案.txt", this.standardAnswer.replace(/,/gm,"\n"));
-		},
-		loadStudentAnswer() {
-			this.$refs.fileInput.click();
+			this._downloadFile(this.standardAnswer.replace(/,/gm,"\n"));
 		},
 		generateTopic() {
-			let data = generateTopic(this.from, this.to, this.count);
+			this.isGenerating = true;
+			this.topic = "";
+			this.standardAnswer = "";
+			if (window.Worker) {
+				let worker = new Worker("./worker/generateTopicWorker.js");
+				worker.postMessage({
+					from : this.from,
+					to : this.to,
+					count : this.count,
+				});
+				worker.onmessage =  (e) => {
+					let data = e.data;
+					this._handleData(data);
+				}
+			}else {
+				let data = generateTopic(this.from, this.to, this.count);
+				this._handleData(data);
+			}
+		},
+		_handleData(data) {
 			this.topic = data.text;
 			this.standardAnswer = data.answer.join(",");
+			if (data.warnMsg) {
+				this.$message.warning(data.warnMsg);
+			}
+			this.isGenerating = false;
 		},
+
 		async handleFileChange(event) {
 			let file = event.target.files[0];
 			// 重新渲染input
 			this.fileInputKey = Math.random();
 			let data = await readFile({file});
-			this.studentAnswer = data.replace(/\s/gm, ",");
+			switch (this.loadType) {
+				case 1:
+					this.topic = data;
+					break;
+				case 2:
+					this.standardAnswer = data.replace(/\s/gm, ",");
+					break;
+				case 3:
+					this.studentAnswer = data.replace(/\s/gm, ",");
+					break;
+				default :
+					break;
+			}
 		},
 		judge() {
-			let {topic, studentAnswer, standardAnswer} = this;
-			studentAnswer = studentAnswer.split(",");
-			standardAnswer = standardAnswer.split(",");
-			topic = topic.split("\n");
-			this.tableVisibility = true;
-			this.loading = true;
-			let tableData = [];
-			for (let i = 0; i < standardAnswer.length; i++) {
-				let obj = {};
-				if (studentAnswer == null) {
-					obj.right = "错误";
-				}else {
-					if (Math.abs(math.eval(standardAnswer[i]) - math.eval(studentAnswer[i])) <= Number.EPSILON) {
-						obj.right = "正确";
-					} else {
+			try {
+				let {topic, studentAnswer, standardAnswer} = this;
+				studentAnswer = studentAnswer.split(",");
+				standardAnswer = standardAnswer.split(",");
+				topic = topic.split("\n");
+				this.tableVisibility = true;
+				this.loading = true;
+				let tableData = [];
+				for (let i = 0; i < standardAnswer.length; i++) {
+					let obj = {};
+					if (studentAnswer == null) {
 						obj.right = "错误";
+					}else {
+						if (Math.abs(math.eval(standardAnswer[i]) - math.eval(studentAnswer[i])) <= Number.EPSILON) {
+							obj.right = "正确";
+						} else {
+							obj.right = "错误";
+						}
 					}
+					obj.studentAnswer = studentAnswer[i];
+					obj.standardAnswer = standardAnswer[i];
+					obj.topic = topic[i];
+					tableData.push(obj);
 				}
-				obj.studentAnswer = studentAnswer[i];
-				obj.standardAnswer = standardAnswer[i];
-				obj.topic = topic[i];
-				tableData.push(obj);
+				this.tableData = tableData;
+				this.loading = false;
+			}catch (e) {
+				this.$msssage.error(e);
+				this.loading = false;
 			}
-			this.tableData = tableData;
-			this.loading = false;
+		},
+		loadTopic() {
+			this.loadType = 1;
+			this.$refs.fileInput.click();
+		},
+		loadStandardAnswer() {
+			this.loadType = 2;
+			this.$refs.fileInput.click();
+		},
+		loadStudentAnswer() {
+			this.loadType = 3;
+			this.$refs.fileInput.click();
+		},
+		downloadStudentAnswer() {
+			this._downloadFile(this.studentAnswer.replace(/,/gm,"\n"));
+		},
+		_downloadFile(content) {
+			this.$prompt('请输入文件名', {
+				confirmButtonText: '确定',
+				cancelButtonText: '取消',
+			}).then(({ value }) => {
+				downloadFile(value, content);
+			}).catch(() => {});
+		},
+		_loadFile(filename, propName) {
+
 		}
 
 	},
