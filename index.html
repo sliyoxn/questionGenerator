@@ -53,16 +53,22 @@
             <textarea id="textBox" class="topic-box" v-model="topic" readonly></textarea>
         </div>
         <div class="bottom-box">
-            <el-button type="primary" @click="downloadTopic">下 载 题 目</el-button>
+            <div class="topic-option-box">
+                <el-button type="primary" @click="downloadTopic">下 载 题 目</el-button>
+                <el-button type="primary" @click="loadTopic">读 取 题 目</el-button>
+            </div>
             <div class="standard-answer-box">
                 <p>标准答案</p>
                 <el-input :value="standardAnswer"></el-input>
-                <el-button type="primary" v-model="studentAnswer" @click="downloadStandardAnswer">下 载 标 准 答 案</el-button>
+                <el-button type="primary" @click="loadStandardAnswer">读 取 标 准 答 案</el-button>
+                <el-button type="primary" @click="downloadStandardAnswer">下 载 标 准 答 案</el-button>
             </div>
             <div class="answer-box">
                 <p>学生答案</p>
                 <el-input v-model="studentAnswer"></el-input>
-                <el-button type="primary" @click="loadStudentAnswer">从 文 件 中 读 取</el-button>
+                <el-button type="primary" @click="loadStudentAnswer">读 取 学 生 答 案</el-button>
+                <el-button type="primary" @click="downloadStudentAnswer">下 载 学 生 答 案</el-button>
+
             </div>
             <el-button type="primary" @click="judge">判 卷</el-button>
         </div>
