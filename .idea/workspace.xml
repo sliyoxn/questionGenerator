@@ -2,20 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49208d43-64d5-4788-ab7e-6020776b461a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/questionGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/questionGenerator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/bean/Fraction.js" beforeDir="false" afterPath="$PROJECT_DIR$/bean/Fraction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/randomUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/randomUtil.js" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,7 @@
       <recent name="E:\WebProject\test002\homework\questionGenerator" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.randomUtil.js">
+  <component name="RunManager" selected="Node.js.Fraction.js">
     <configuration name="Fraction.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bean/Fraction.js" working-dir="$PROJECT_DIR$/bean">
       <method v="2" />
     </configuration>
@@ -71,9 +68,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.randomUtil.js" />
         <item itemvalue="Node.js.Fraction.js" />
         <item itemvalue="Node.js.calEval.js" />
+        <item itemvalue="Node.js.randomUtil.js" />
         <item itemvalue="Node.js.generateTopic.js" />
       </list>
     </recent_temporary>
@@ -88,12 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585292557219</updated>
-<<<<<<< Updated upstream
-      <workItem from="1585292559238" duration="28125000" />
-=======
       <workItem from="1585292559238" duration="29519000" />
-      <workItem from="1585355700938" duration="1050000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -101,22 +93,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2005" height="258" key="GridCell.Tab.0.bottom" timestamp="1585320393977">
+    <state width="2005" height="262" key="GridCell.Tab.0.bottom" timestamp="1585378752796">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="258" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585320393977" />
-    <state width="2005" height="258" key="GridCell.Tab.0.center" timestamp="1585320393977">
+    <state width="2005" height="262" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585378752796" />
+    <state width="2005" height="262" key="GridCell.Tab.0.center" timestamp="1585378752796">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="258" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585320393977" />
-    <state width="2005" height="258" key="GridCell.Tab.0.left" timestamp="1585320393977">
+    <state width="2005" height="262" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585378752796" />
+    <state width="2005" height="262" key="GridCell.Tab.0.left" timestamp="1585378752796">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="258" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585320393977" />
-    <state width="2005" height="258" key="GridCell.Tab.0.right" timestamp="1585320393977">
+    <state width="2005" height="262" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585378752796" />
+    <state width="2005" height="262" key="GridCell.Tab.0.right" timestamp="1585378752796">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="258" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585320393977" />
+    <state width="2005" height="262" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585378752796" />
     <state width="2005" height="392" key="GridCell.Tab.1.bottom" timestamp="1585312527872">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -149,5 +141,9 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state width="2005" height="392" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585312527872" />
+    <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585381649259">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="703" y="309" width="642" height="534" key="find.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585381649259" />
   </component>
 </project>

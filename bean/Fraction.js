@@ -230,3 +230,5 @@ class Fraction {
 // console.log(Fraction.)
 
 // console.log(Fraction.fromString("-76/9"));
+
+// console.log(Fraction.fromString("1'1/2").value)
