@@ -2,9 +2,9 @@ function getTableData({topic, studentAnswer, standardAnswer}) {
 	let tableData = [];
 	for (let i = 0; i < standardAnswer.length; i++) {
 		let obj = {};
-		if (studentAnswer == null) {
+		if (studentAnswer[i] == null) {
 			obj.right = "错误";
-		}else {
+		} else {
 			if (Math.abs(math.eval(standardAnswer[i]) - math.eval(studentAnswer[i])) <= Number.EPSILON) {
 				obj.right = "正确";
 			} else {

@@ -79,12 +79,14 @@ let vm = new Vue({
 			topic = topic.split("\n");
 			try {
 				if (window.Worker) {
-					let worker = new Worker("./worker/judgeWorker.js");
-					worker.postMessage({topic, studentAnswer, standardAnswer});
-					worker.onmessage =  ({data}) => {
-						this.tableData = data;
-						this.loading = false;
-					}
+					this.$nextTick(() => {
+						let worker = new Worker("./worker/judgeWorker.js");
+						worker.postMessage({topic, studentAnswer, standardAnswer});
+						worker.onmessage =  ({data}) => {
+							this.tableData = data;
+							this.loading = false;
+						}
+					})
 				} else {
 					let tableData = getTableData({topic, studentAnswer, standardAnswer});
 					this.tableData = tableData;
