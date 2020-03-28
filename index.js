@@ -36,7 +36,8 @@ let vm = new Vue({
 					let data = e.data;
 					this._handleData(data);
 				}
-			}else {
+			}
+			else {
 				let data = generateTopic(this.from, this.to, this.count);
 				this._handleData(data);
 			}
@@ -70,32 +71,25 @@ let vm = new Vue({
 			}
 		},
 		judge() {
+			this.tableVisibility = true;
+			this.loading = true;
+			let {topic, studentAnswer, standardAnswer} = this;
+			studentAnswer = studentAnswer.split(",");
+			standardAnswer = standardAnswer.split(",");
+			topic = topic.split("\n");
 			try {
-				let {topic, studentAnswer, standardAnswer} = this;
-				studentAnswer = studentAnswer.split(",");
-				standardAnswer = standardAnswer.split(",");
-				topic = topic.split("\n");
-				this.tableVisibility = true;
-				this.loading = true;
-				let tableData = [];
-				for (let i = 0; i < standardAnswer.length; i++) {
-					let obj = {};
-					if (studentAnswer == null) {
-						obj.right = "错误";
-					}else {
-						if (Math.abs(math.eval(standardAnswer[i]) - math.eval(studentAnswer[i])) <= Number.EPSILON) {
-							obj.right = "正确";
-						} else {
-							obj.right = "错误";
-						}
+				if (window.Worker) {
+					let worker = new Worker("./worker/judgeWorker.js");
+					worker.postMessage({topic, studentAnswer, standardAnswer});
+					worker.onmessage =  ({data}) => {
+						this.tableData = data;
+						this.loading = false;
 					}
-					obj.studentAnswer = studentAnswer[i];
-					obj.standardAnswer = standardAnswer[i];
-					obj.topic = topic[i];
-					tableData.push(obj);
+				} else {
+					let tableData = getTableData({topic, studentAnswer, standardAnswer});
+					this.tableData = tableData;
+					this.loading = false;
 				}
-				this.tableData = tableData;
-				this.loading = false;
 			}catch (e) {
 				this.$msssage.error(e);
 				this.loading = false;
@@ -125,11 +119,11 @@ let vm = new Vue({
 			}).catch(() => {});
 		},
 		_loadFile(filename, propName) {
-	
+
 		}
-	
+
 	},
 	computed :{
-	
+
 	}
 });
