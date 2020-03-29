@@ -1,60 +1,116 @@
-function calEval(str = '') {
+const operandExp = /(\d+'\d+\/\d+|\d+\/\d|\d+)/;
+const operatorExp = /[+\-*\/()]/;
+const priorityObj = {
+	"(" : 0,
+	"+" : 1,
+	"-" : 1,
+	"*" : 2,
+	"/" : 2,
 
-	let hasBracket = /\([\w\W]+\)/.test(str);
-	let operatorCount = str.split(" ").length === 3 ? 1 : 2;
-	let sum = null;
-	let hasNegativeNumber = false;
-	if (operatorCount === 1) {
-		let arr = str.split(" ");
-		sum = Fraction.calculate(arr[0], arr[2], arr[1]);
-		if (sum.value < 0) hasNegativeNumber = true;
-	} else {
-		if (hasBracket) {
-			let startIndex = str.indexOf("(");
-			let endIndex = str.indexOf(")");
-			let arr = str.slice(startIndex + 1, endIndex).split(" ");
-			sum = Fraction.calculate(arr[0], arr[2], arr[1]);
-			if (sum.value < 0) hasNegativeNumber = true;
-			str = str.replace(/\([\w\W]+\)/, sum);
-			arr = str.split(" ");
-			sum = Fraction.calculate(arr[0], arr[2], arr[1]);
-			if (sum.value < 0) hasNegativeNumber = true;
-		} else {
-			let flag = /[\d'\/]+\s[*\/]\s[\d'\/]+/.test(str);
-			if (flag) {
-				let matchStr = str.match(/[\d'\/]+\s[*\/]\s[\d'\/]+/)[0];
-				let arr = matchStr.split(" ");
-				sum = Fraction.calculate(arr[0], arr[2], arr[1]);
-				if (sum.value < 0) hasNegativeNumber = true;
-				str = str.replace(matchStr, sum.toString());
-				arr = str.split(" ");
-				sum = Fraction.calculate(arr[0], arr[2], arr[1]);
-				if (sum.value < 0) hasNegativeNumber = true;
-			} else {
-				let arr = str.split(" ");
-				arr = [Fraction.calculate(arr[0], arr[2], arr[1]).toString(), arr[3], arr[4]];
-				sum = Fraction.calculate(arr[0], arr[2], arr[1]);
-				if (sum.value < 0) hasNegativeNumber = true;
-			}
-		}
+};
+Object.freeze(priorityObj);
+class Stack extends Array{
+	getTop() {
+		return this[this.length - 1];
 	}
-
-	// console.log(sum.toString());
-	return {
-		val : sum.toString(),
-		hasNegativeNumber
-	};
-
+	isEmpty() {
+		return this.length === 0;
+	}
 }
 
-// calEval("2 * (1'1/2 - 1/2)");
-// calEval("(3 + 8) * 9");
-// calEval("3 + 8");
-// calEval("3 - 14 + 3");
-// calEval("1/3 * -3");
-// calEval("1/3 * 1'2/5 + 8/15");
-// console.log(calEval("7 / 3'5/8 * 6'4/5"));
+/**
+ * 中缀转后缀
+ * @param {String} string
+ */
+function transform(string) {
+	let expression = "";
+	let operatorStack = new Stack();
+	while ((string = string.trim()) !== "") {
+		let operandTestRes = string.match(operandExp);
+		let operatorTestRes = string.match(operatorExp);
+		let isOperand = operandTestRes && (operandTestRes.index === 0);
+		let isOperator = operatorTestRes && (operatorTestRes.index === 0);
+		if (isOperand) {
+			let matchStr = operandTestRes[0];
+			expression += matchStr + " ";
+			string = string.slice(operandTestRes.index + matchStr.length);
+		} else if (isOperator) {
+			let operator = string[0];
+			let topOperator = null;
+			switch (operator) {
+				case "+":
+				case "-":
+				case "*":
+				case "/":
+					topOperator = operatorStack.getTop();
+					if (topOperator) {
+						while (!operatorStack.isEmpty() && !comparePriority((topOperator = operatorStack.getTop()), operator)) {
+							expression += operatorStack.pop() + " ";
+						}
+						operatorStack.push(operator);
+					} else {
+						operatorStack.push(operator);
+					}
+					break;
+				case "(":
+					operatorStack.push(operator);
+					break;
+				case ")":
+					while ((topOperator = operatorStack.getTop()) !== "(") {
+						expression += operatorStack.pop() + " ";
+					}
+					operatorStack.pop();
+					break;
 
-//   56/29 * 34/5
+			}
+			string = string.slice(1);
+		}
+	}
+	while (!operatorStack.isEmpty()) {
+		expression += operatorStack.pop() + " ";
+	}
+	expression = expression.trim();
+	return expression;
+}
 
-// console.log(calEval("2 - 2'1/2 * 2'1/2"));
+
+/**
+ * 返回1代表可以入栈
+ * @param a
+ * @param b
+ * @returns {boolean}
+ */
+function comparePriority(a, b) {
+	a = priorityObj[a];
+	b = priorityObj[b];
+	return a < b;
+}
+
+function calEval(eval) {
+	let expression = transform(eval);
+	let operandStack = new Stack();
+	let array = expression.split(" ");
+	let hasNegativeNumber = false;
+	while (array.length) {
+		let o = array.shift();
+		if (operandExp.test(o)) {
+			operandStack.push(o);
+		} else {
+			let a = operandStack.pop();
+			let b = operandStack.pop();
+			let res = Fraction.calculate(b, a, o);
+			if (hasNegativeNumber) {
+				hasNegativeNumber = true;
+				return {
+					val: -1,
+					hasNegativeNumber
+				}
+			}
+			operandStack.push(res);
+		}
+	}
+	return {
+		val : operandStack.pop().toMixedString(),
+		hasNegativeNumber
+	}
+}
