@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/file/学生答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/file/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/file/题目.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/judge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/src/Fraction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/src/calEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/util/readFile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/util/writeFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/calEval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/generateTopic.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,41 +48,46 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/WebPro/Infix-calculator" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/util" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebProject\test002\homework\questionGenerator\test\util" />
       <recent name="E:\WebProject\test002\homework\questionGenerator\test" />
       <recent name="E:\WebProject\test002\homework\questionGenerator" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebProject\test002\homework\questionGenerator\test" />
+      <recent name="E:\WebProject\test002\homework\questionGenerator\test\src" />
       <recent name="E:\WebProject\test002\homework\questionGenerator\worker\util" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.calEval.js (1)">
-    <configuration name="Fraction.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bean/Fraction.js" working-dir="$PROJECT_DIR$/bean">
+  <component name="RunManager" selected="Node.js.judge.js">
+    <configuration name="calEval.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/src/calEval.js" working-dir="$PROJECT_DIR$/test">
       <method v="2" />
     </configuration>
-    <configuration name="calEval.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/calEval.js" working-dir="$PROJECT_DIR$/test">
+    <configuration name="generateTopic.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/src/generateTopic.js" working-dir="$PROJECT_DIR$/test/src">
       <method v="2" />
     </configuration>
-    <configuration name="calEval.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/util/calEval.js" working-dir="$PROJECT_DIR$/util">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/index.js" working-dir="$PROJECT_DIR$/test/src">
       <method v="2" />
     </configuration>
-    <configuration name="generateTopic.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/util/generateTopic.js" working-dir="$PROJECT_DIR$/util">
+    <configuration name="judge.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/judge.js" working-dir="$PROJECT_DIR$/test">
       <method v="2" />
     </configuration>
-    <configuration name="randomUtil.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/util/randomUtil.js" working-dir="$PROJECT_DIR$/util">
+    <configuration name="writeFile.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/util/writeFile.js" working-dir="$PROJECT_DIR$/test/util">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.calEval.js (1)" />
-        <item itemvalue="Node.js.randomUtil.js" />
-        <item itemvalue="Node.js.Fraction.js" />
-        <item itemvalue="Node.js.calEval.js" />
+        <item itemvalue="Node.js.judge.js" />
+        <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.writeFile.js" />
         <item itemvalue="Node.js.generateTopic.js" />
+        <item itemvalue="Node.js.calEval.js (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -86,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585292557219</updated>
       <workItem from="1585292559238" duration="29519000" />
-      <workItem from="1585460599702" duration="9076000" />
+      <workItem from="1585460599702" duration="11114000" />
     </task>
     <servers />
   </component>
@@ -98,22 +114,22 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585462046150" />
-    <state width="2005" height="510" key="GridCell.Tab.0.bottom" timestamp="1585461881788">
+    <state width="2005" height="510" key="GridCell.Tab.0.bottom" timestamp="1585484765056">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="510" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585461881788" />
-    <state width="2005" height="510" key="GridCell.Tab.0.center" timestamp="1585461881788">
+    <state width="2005" height="510" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585484765056" />
+    <state width="2005" height="510" key="GridCell.Tab.0.center" timestamp="1585484765056">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="510" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585461881788" />
-    <state width="2005" height="510" key="GridCell.Tab.0.left" timestamp="1585461881788">
+    <state width="2005" height="510" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585484765056" />
+    <state width="2005" height="510" key="GridCell.Tab.0.left" timestamp="1585484765055">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="510" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585461881788" />
-    <state width="2005" height="510" key="GridCell.Tab.0.right" timestamp="1585461881788">
+    <state width="2005" height="510" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585484765055" />
+    <state width="2005" height="510" key="GridCell.Tab.0.right" timestamp="1585484765056">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="510" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585461881788" />
+    <state width="2005" height="510" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585484765056" />
     <state width="2005" height="392" key="GridCell.Tab.1.bottom" timestamp="1585312527872">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -146,6 +162,14 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state width="2005" height="392" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585312527872" />
+    <state x="-1920" y="0" width="1550" height="951" key="dock-window-1" timestamp="1585483265309">
+      <screen x="-1920" y="0" width="1536" height="864" />
+    </state>
+    <state x="-1920" y="0" width="1550" height="951" key="dock-window-1/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585483265309" />
+    <state x="-1920" y="30" width="1550" height="600" key="dock-window-2" timestamp="1585484780504">
+      <screen x="-1920" y="0" width="1536" height="864" />
+    </state>
+    <state x="-1920" y="30" width="1550" height="600" key="dock-window-2/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585484780504" />
     <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585481619269">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
