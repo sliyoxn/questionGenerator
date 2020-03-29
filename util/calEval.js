@@ -99,7 +99,7 @@ function calEval(eval) {
 			let a = operandStack.pop();
 			let b = operandStack.pop();
 			let res = Fraction.calculate(b, a, o);
-			if (hasNegativeNumber) {
+			if (res.value < 0) {
 				hasNegativeNumber = true;
 				return {
 					val: -1,

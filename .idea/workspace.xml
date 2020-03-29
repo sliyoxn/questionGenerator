@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/calEval.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/generateTopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585292557219</updated>
       <workItem from="1585292559238" duration="29519000" />
-      <workItem from="1585460599702" duration="4005000" />
+      <workItem from="1585460599702" duration="9076000" />
     </task>
     <servers />
   </component>
@@ -149,5 +146,13 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state width="2005" height="392" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585312527872" />
+    <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585481619269">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="703" y="309" width="642" height="534" key="find.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585481619269" />
+    <state x="681" y="269" key="run.anything.popup" timestamp="1585479991152">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="681" y="269" key="run.anything.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585479991152" />
   </component>
 </project>
