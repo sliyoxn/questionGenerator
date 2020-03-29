@@ -100,7 +100,7 @@ module.exports = function calEval(eval) {
 			let a = operandStack.pop();
 			let b = operandStack.pop();
 			let res = Fraction.calculate(b, a, o);
-			if (res.value < 0) {
+			if (res.value < 0 || res.value === Infinity) {
 				hasNegativeNumber = true;
 				return {
 					val: -1,

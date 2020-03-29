@@ -81,6 +81,7 @@ let vm = new Vue({
 				if (window.Worker) {
 					this.$nextTick(() => {
 						let worker = new Worker("./worker/judgeWorker.js");
+						console.log(window.Fraction);
 						worker.postMessage({topic, studentAnswer, standardAnswer});
 						worker.onmessage =  ({data}) => {
 							this.tableData = data;

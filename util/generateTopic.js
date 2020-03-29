@@ -48,7 +48,6 @@ function getExpression(from, to) {
 	let operandArr = [leftVal];
 	let operatorArr = [operator];
 	if (useFirstIndexBracket && operatorCount >= 2) {
-		// debugger;
 		expression += `(${leftVal} ${operator} `;
 		operator = getRandomOperator();
 		operatorArr.push(operator);

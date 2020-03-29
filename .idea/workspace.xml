@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/generateTopic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/src/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/calEval.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/randomUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/randomUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/judgeWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker/judgeWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/util/judgeUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker/util/judgeUtil.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585292557219</updated>
       <workItem from="1585292559238" duration="29519000" />
-      <workItem from="1585460599702" duration="11928000" />
+      <workItem from="1585460599702" duration="14347000" />
     </task>
     <servers />
   </component>
@@ -160,10 +162,10 @@
       <screen x="-1920" y="0" width="1536" height="864" />
     </state>
     <state x="-1920" y="30" width="1550" height="600" key="dock-window-2/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585484780504" />
-    <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585485454631">
+    <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585487615690">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="703" y="309" width="642" height="534" key="find.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585485454631" />
+    <state x="703" y="309" width="642" height="534" key="find.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585487615690" />
     <state x="681" y="269" key="run.anything.popup" timestamp="1585479991152">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
