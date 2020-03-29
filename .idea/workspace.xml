@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/file/学生答案.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file/答案.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file/题目.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/judge.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/src/Fraction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/src/calEval.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/util/readFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/util/writeFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/calEval.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/generateTopic.js" afterDir="false" />
-    </list>
+    <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585292557219</updated>
       <workItem from="1585292559238" duration="29519000" />
-      <workItem from="1585460599702" duration="11114000" />
+      <workItem from="1585460599702" duration="11372000" />
     </task>
     <servers />
   </component>
