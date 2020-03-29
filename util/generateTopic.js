@@ -8,9 +8,6 @@ function generateTopic(from, to, count) {
 		let expressionObj = getExpression(from, to);
 		let expression = expressionObj.expression;
 		simpleExpression = expressionObj.simpleExpression;
-		// if (expression === "(2 / 2) / 2") {
-		// 	console.log(simpleExpressionSet.has(simpleExpression));
-		// }
 		let curLoopCount = 0;
 		let calRes = calEval(expression);
 		while ((calRes.hasNegativeNumber || simpleExpressionSet.has(simpleExpression)) && curLoopCount < maxLoopCount) {
@@ -63,10 +60,7 @@ function getExpression(from, to) {
 	}
 
 	let simpleExpression = getSimpleExpression(operandArr, operatorArr);
-	// if (expression === "(2 / 2) / 2") {
-	// 	console.log(expression,"    ",simpleExpression);
-	// 	console.log(operatorArr);
-	// }
+
 
 	return {
 		expression,

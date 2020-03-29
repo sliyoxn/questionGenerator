@@ -3,6 +3,4 @@ function getRandom(from, to, isInt = true) {
 	return isInt ? Math.floor(val) : val;
 }
 
-// for (let i = 0; i < 100; i++) {
-// 	console.log(getRandom(1,2));
-// }
+
