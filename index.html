@@ -32,7 +32,9 @@
                 direction="rtl"
                 :with-header="false"
                 :show-close="true"
-                size="100%">
+                size="100%"
+                @close="handleClose"
+        >
             <el-table :data="tableData" border height="100%" v-loading="loading">
                 <el-table-column property="topic" label="题目"></el-table-column>
                 <el-table-column property="standardAnswer" label="标准答案"></el-table-column>

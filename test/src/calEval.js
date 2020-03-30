@@ -1,4 +1,4 @@
-const operandExp = /(\d+'\d+\/\d+|\d+\/\d|\d+)/;
+const operandExp = /(\d+'\d+\/\d+|\d+\/\d+|\d+)/;
 const operatorExp = /[+\-*\/()]/;
 const priorityObj = {
 	"(" : 0,
@@ -103,7 +103,7 @@ module.exports = function calEval(eval) {
 			if (res.value < 0 || res.value === Infinity) {
 				hasNegativeNumber = true;
 				return {
-					val: -1,
+					val: res.value === Infinity ? Infinity : "-99.99",
 					hasNegativeNumber
 				}
 			}

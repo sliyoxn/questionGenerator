@@ -3,7 +3,7 @@ const readFile = require("./util/readFile");
 	let topic = await readFile("./file/题目.txt");
 	let answer = await readFile("./file/答案.txt");
 	let stuAnswer = await readFile("./file/学生答案.txt");
-
+	topic = topic.split("\n");
 	answer = answer.split("\n");
 	stuAnswer = stuAnswer.split("\n");
 	let data = [];
@@ -18,6 +18,7 @@ const readFile = require("./util/readFile");
 			o.right = "正确";
 		}
 		data.push(o);
+		console.log(`题目 : ${o.topic}       标准答案: ${o.answer}     学生答案: ${o.stuAnswer}   正确性: ${o.right}`);
 	}
-	console.log(data);
+
 })();

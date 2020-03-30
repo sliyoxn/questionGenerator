@@ -13,7 +13,8 @@ let vm = new Vue({
 		loading : false,
 		isGenerating : false,
 		loadType : -1,
-		prevTopicWorker : null
+		prevTopicWorker : null,
+		prevJudgeWorker : null
 	},
 	methods : {
 		downloadTopic() {
@@ -23,6 +24,12 @@ let vm = new Vue({
 		downloadStandardAnswer() {
 			this._downloadFile(this.standardAnswer.replace(/,/gm,"\n").trim());
 			if (this.isGenerating) this.$message.warning("还没有生成完毕, 现在下载会导致不完整");
+		},
+		handleClose() {
+			if (this.prevJudgeWorker) {
+				this.prevJudgeWorker.terminate();
+				this.prevJudgeWorker = null;
+			}
 		},
 		async generateTopic() {
 			this.isGenerating = true;
@@ -110,6 +117,10 @@ let vm = new Vue({
 			this.tableVisibility = true;
 			this.loading = true;
 			this.tableData = [];
+			if (this.prevJudgeWorker) {
+				this.prevJudgeWorker.terminate();
+				this.prevJudgeWorker = null;
+			}
 			let {topic, studentAnswer, standardAnswer} = this;
 			studentAnswer = studentAnswer.split(",");
 			standardAnswer = standardAnswer.split(",");
@@ -133,6 +144,7 @@ let vm = new Vue({
 							}
 							await this._sleepToNextTick();
 						}
+						this.prevJudgeWorker = null;
 					}, standardAnswer.length < 1000 ? 0 : 300);
 				} else {
 					let tableData = getTableData({topic, studentAnswer, standardAnswer});
@@ -173,6 +185,7 @@ let vm = new Vue({
 		_loadTableData({topic, studentAnswer, standardAnswer}) {
 			return new Promise((resolve, reject) => {
 				let worker = new Worker("./worker/judgeWorker.js");
+				this.prevJudgeWorker = worker;
 				worker.postMessage({topic, studentAnswer, standardAnswer});
 				worker.onmessage =  ({data}) => {
 					resolve(data);
