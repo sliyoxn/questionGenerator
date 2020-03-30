@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/file/判卷结果.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/file/学生答案.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/学生答案.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/file/答案.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/答案.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/file/题目.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/题目.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/judge.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/judge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/calEval.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
       <updated>1585292557219</updated>
       <workItem from="1585292559238" duration="29519000" />
       <workItem from="1585460599702" duration="15278000" />
-      <workItem from="1585530482460" duration="20717000" />
+      <workItem from="1585530482460" duration="25315000" />
     </task>
     <servers />
   </component>
@@ -105,6 +104,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="766" y="378" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585573532577">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="766" y="378" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585573532577" />
     <state x="755" y="322" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585561240637">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -113,22 +116,22 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585567267421" />
-    <state width="2005" height="612" key="GridCell.Tab.0.bottom" timestamp="1585572133921">
+    <state width="2005" height="158" key="GridCell.Tab.0.bottom" timestamp="1585576756834">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="612" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585572133921" />
-    <state width="2005" height="612" key="GridCell.Tab.0.center" timestamp="1585572133921">
+    <state width="2005" height="158" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585576756834" />
+    <state width="2005" height="158" key="GridCell.Tab.0.center" timestamp="1585576756834">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="612" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585572133921" />
-    <state width="2005" height="612" key="GridCell.Tab.0.left" timestamp="1585572133921">
+    <state width="2005" height="158" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585576756834" />
+    <state width="2005" height="158" key="GridCell.Tab.0.left" timestamp="1585576756834">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="612" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585572133921" />
-    <state width="2005" height="612" key="GridCell.Tab.0.right" timestamp="1585572133921">
+    <state width="2005" height="158" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585576756834" />
+    <state width="2005" height="158" key="GridCell.Tab.0.right" timestamp="1585576756834">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="612" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585572133921" />
+    <state width="2005" height="158" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585576756834" />
     <state width="2005" height="392" key="GridCell.Tab.1.bottom" timestamp="1585571716634">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -181,21 +184,9 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="681" y="269" key="run.anything.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585479991152" />
-    <state x="687" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1585571864284">
+    <state x="687" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1585573246631">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="687" y="253" width="672" height="678" key="search.everywhere.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585571864284" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/index.js</url>
-          <line>20</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="687" y="253" width="672" height="678" key="search.everywhere.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585573246631" />
   </component>
 </project>

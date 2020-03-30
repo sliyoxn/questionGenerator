@@ -44,6 +44,7 @@ let vm = new Vue({
 			if (window.Worker) {
 				let loopCount = this.count / singleHandleCount + 1;
 				let hasHandleCount = 0;
+				// let prevTime = new Date().getTime();
 				for (let i = 0; i < loopCount; i++) {
 					let thisHandleCount = Math.min(singleHandleCount, this.count - hasHandleCount);
 					hasHandleCount += thisHandleCount;
@@ -53,15 +54,21 @@ let vm = new Vue({
 						count : thisHandleCount,
 						simpleExpressionSet
 					});
+					// if (i === 0) {
+					// 	console.log("第一版题目数据加载出来用的时间为(10000条题目):" + (new Date().getTime() - prevTime) + "ms");
+					// }
+					// if (i === loopCount - 1) {
+					// 	console.log("全部题目数据加载出来用的时间为(10000条题目):" + (new Date().getTime() - prevTime) + "ms");
+					// }
 					simpleExpressionSet = data.simpleExpressionSet;
 					// console.log(data.simpleExpressionSet === simpleExpressionSet);
 					if (!this._handleData(data, i === 0 ? Constants.worker.RELOAD : Constants.worker.ADD)) {
-						break;
+						this.isGenerating = false;
+						return ;
 					}
 					await this._sleepToNextTick();
 				}
-				this.isGenerating = false;
-				this.$message.success("生成完毕")
+				this.$message.success("生成完毕");
 			}
 			// 处理不支持Worker的浏览器
 			else {
@@ -73,7 +80,7 @@ let vm = new Vue({
 				});
 				this._handleData(data);
 				this.isGenerating = false;
-				this.$message.success("生成完毕")
+				this.$message.success("生成完毕");
 			}
 		},
 		_handleData(data, type = Constants.worker.RELOAD) {
