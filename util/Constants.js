@@ -8,6 +8,10 @@ let Constants = {
 		"MINUS" : 2,
 		"MULTI" : 3,
 		"DIVISION" : 4
+	},
+	worker : {
+		RELOAD : "reload",
+		ADD : "add"
 	}
 };
 

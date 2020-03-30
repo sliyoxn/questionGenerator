@@ -6,6 +6,7 @@ importScripts("../util/randomUtil.js");
 importScripts("../bean/Fraction.js");
 this.onmessage = function ({data}) {
 	let {from, to, count, warnFn} = data;
+	// let simpleExpressionSet =
 	let topicData = generateTopic(from, to, count, warnFn);
 	this.postMessage(topicData);
 };

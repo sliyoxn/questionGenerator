@@ -1,4 +1,4 @@
-const operandExp = /(\d+'\d+\/\d+|\d+\/\d|\d+)/;
+const operandExp = /(\d+'\d+\/\d+|\d+\/\d+|\d+)/;
 const operatorExp = /[+\-*\/()]/;
 const priorityObj = {
 	"(" : 0,
@@ -86,6 +86,11 @@ function comparePriority(a, b) {
 	return a < b;
 }
 
+/**
+ * 计算带分数的中缀表达式
+ * @param eval {String} 表达式
+ * @returns {{val: string, hasNegativeNumber: boolean}}
+ */
 function calEval(eval) {
 	let expression = transform(eval);
 	let operandStack = new Stack();
@@ -102,7 +107,7 @@ function calEval(eval) {
 			if (res.value < 0) {
 				hasNegativeNumber = true;
 				return {
-					val: -1,
+					val: "-1",
 					hasNegativeNumber
 				}
 			}

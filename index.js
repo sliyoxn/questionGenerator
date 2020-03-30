@@ -70,24 +70,34 @@ let vm = new Vue({
 					break;
 			}
 		},
-		judge() {
+		async judge() {
 			this.tableVisibility = true;
 			this.loading = true;
+			this.tableData = [];
 			let {topic, studentAnswer, standardAnswer} = this;
 			studentAnswer = studentAnswer.split(",");
 			standardAnswer = standardAnswer.split(",");
 			topic = topic.split("\n");
+			let singleHandleCount = 500;
 			try {
 				if (window.Worker) {
-					this.$nextTick(() => {
+					setTimeout(async () => {
 						let worker = new Worker("./worker/judgeWorker.js");
-						console.log(window.Fraction);
-						worker.postMessage({topic, studentAnswer, standardAnswer});
-						worker.onmessage =  ({data}) => {
-							this.tableData = data;
-							this.loading = false;
+						let loopCount = standardAnswer.length / singleHandleCount + 1;
+						for (let i = 0; i < loopCount; i++) {
+							let sliceSA = standardAnswer.slice(i * singleHandleCount, (i + 1) * singleHandleCount);
+							let sliceTA = studentAnswer.slice(i * singleHandleCount, (i + 1) * singleHandleCount);
+							let sliceTopic = topic.slice(i * singleHandleCount, (i + 1) * singleHandleCount);
+							let data = await this._loadTableData({topic : sliceTopic, studentAnswer : sliceTA, standardAnswer : sliceSA});
+							if (i === 0) {
+								this.tableData = data;
+								this.loading = false;
+							} else {
+								this.tableData.push(...data);
+							}
+							await this._sleepToNextTick();
 						}
-					})
+					}, 500);
 				} else {
 					let tableData = getTableData({topic, studentAnswer, standardAnswer});
 					this.tableData = tableData;
@@ -123,7 +133,32 @@ let vm = new Vue({
 		},
 		_loadFile(filename, propName) {
 
+		},
+		_loadTableData({topic, studentAnswer, standardAnswer}) {
+			return new Promise((resolve, reject) => {
+				let worker = new Worker("./worker/judgeWorker.js");
+				worker.postMessage({topic, studentAnswer, standardAnswer});
+				worker.onmessage =  ({data}) => {
+					resolve(data);
+					worker.terminate();
+				}
+			})
+		},
+		_sleep(time) {
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve();
+				}, time)
+			})
+		},
+		_sleepToNextTick() {
+			return new Promise((resolve, reject) => {
+				this.$nextTick(() => {
+					resolve();
+				});
+			})
 		}
+
 
 	},
 	computed :{

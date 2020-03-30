@@ -1,5 +1,4 @@
 function getTableData({topic, studentAnswer, standardAnswer}) {
-	console.log()
 	let tableData = [];
 	for (let i = 0; i < standardAnswer.length; i++) {
 		let obj = {};
