@@ -1,9 +1,8 @@
-function generateTopic(from, to, count) {
+const arr = [];
+function generateTopic({from, to, count, maxLoopCount = count * 5, simpleExpressionSet} ) {
 	let str = "";
 	let answerArr = [];
-	let simpleExpressionSet = new Set();
 	let simpleExpression = "";
-	let maxLoopCount = count * 5;
 	for (let i = 0; i < count; i++) {
 		let expressionObj = getExpression(from, to);
 		let expression = expressionObj.expression;
@@ -33,7 +32,8 @@ function generateTopic(from, to, count) {
 	}
 	return {
 		text : str.slice(0, str.length - 1),
-		answer : answerArr
+		answer : answerArr,
+		simpleExpressionSet
 	}
 }
 

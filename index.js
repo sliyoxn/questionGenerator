@@ -6,49 +6,85 @@ let vm = new Vue({
 		topic : "",
 		standardAnswer : "",
 		studentAnswer : "",
-		count : 1000,
+		count : 10,
 		fileInputKey : 0,
 		tableData : [],
 		tableVisibility : false,
 		loading : false,
 		isGenerating : false,
-		loadType : -1
+		loadType : -1,
+		prevTopicWorker : null
 	},
 	methods : {
 		downloadTopic() {
-			this._downloadFile(this.topic)
+			this._downloadFile(this.topic.trim());
+			if (this.isGenerating) this.$message.warning("还没有生成完毕, 现在下载会导致不完整");
 		},
 		downloadStandardAnswer() {
-			this._downloadFile(this.standardAnswer.replace(/,/gm,"\n"));
+			this._downloadFile(this.standardAnswer.replace(/,/gm,"\n").trim());
+			if (this.isGenerating) this.$message.warning("还没有生成完毕, 现在下载会导致不完整");
 		},
-		generateTopic() {
+		async generateTopic() {
 			this.isGenerating = true;
 			this.topic = "";
 			this.standardAnswer = "";
+			if (this.prevTopicWorker) {
+				this.prevTopicWorker.terminate();
+				this.prevTopicWorker = null;
+			}
+			const singleHandleCount = 1000;
+			let simpleExpressionSet = new Set();
+			simpleExpressionSet.add("ruaQAQ");
 			if (window.Worker) {
-				let worker = new Worker("./worker/generateTopicWorker.js");
-				worker.postMessage({
+				let loopCount = this.count / singleHandleCount + 1;
+				let hasHandleCount = 0;
+				for (let i = 0; i < loopCount; i++) {
+					let thisHandleCount = Math.min(singleHandleCount, this.count - hasHandleCount);
+					hasHandleCount += thisHandleCount;
+					let data = await this._loadTopicData({
+						from : this.from,
+						to : this.to,
+						count : thisHandleCount,
+						simpleExpressionSet
+					});
+					simpleExpressionSet = data.simpleExpressionSet;
+					// console.log(data.simpleExpressionSet === simpleExpressionSet);
+					if (!this._handleData(data, i === 0 ? Constants.worker.RELOAD : Constants.worker.ADD)) {
+						break;
+					}
+					await this._sleepToNextTick();
+				}
+				this.isGenerating = false;
+				this.$message.success("生成完毕")
+			}
+			else {
+				let data = generateTopic({
 					from : this.from,
 					to : this.to,
 					count : this.count,
+					simpleExpressionSet : new Set()
 				});
-				worker.onmessage =  (e) => {
-					let data = e.data;
-					this._handleData(data);
-				}
-			}
-			else {
-				let data = generateTopic(this.from, this.to, this.count);
 				this._handleData(data);
+				this.isGenerating = false;
+				this.$message.success("生成完毕")
 			}
 		},
-		_handleData(data) {
-			this.topic = data.text;
-			this.standardAnswer = data.answer.join(",");
+		_handleData(data, type = Constants.worker.RELOAD) {
+			if (data.text === "") {
+				return 1;
+			}
+			if (type === Constants.worker.RELOAD) {
+				this.topic = data.text;
+				this.standardAnswer = data.answer.join(",");
+			} else if (type === Constants.worker.ADD){
+				this.topic += "\n" +  data.text;
+				this.standardAnswer +=  "," + data.answer.join(",");
+			}
 			if (data.warnMsg) {
 				this.$message.warning(data.warnMsg);
+				return 0;
 			}
-			this.isGenerating = false;
+			return 1;
 		},
 
 		async handleFileChange(event) {
@@ -157,6 +193,22 @@ let vm = new Vue({
 					resolve();
 				});
 			})
+		},
+		_loadTopicData({from, to, count, simpleExpressionSet}) {
+			return new Promise((resolve, reject) => {
+				let worker = new Worker("./worker/generateTopicWorker.js");
+				this.prevTopicWorker = worker;
+				worker.postMessage({
+					from,
+					to,
+					count,
+					simpleExpressionSet
+				});
+				worker.onmessage =  ({data}) => {
+					resolve(data);
+					worker.terminate();
+				}
+			});
 		}
 
 

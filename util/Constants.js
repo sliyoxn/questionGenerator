@@ -11,7 +11,8 @@ let Constants = {
 	},
 	worker : {
 		RELOAD : "reload",
-		ADD : "add"
+		ADD : "add",
+		END : "end"
 	}
 };
 
