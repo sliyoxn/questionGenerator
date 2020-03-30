@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/Constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker/generateTopicWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker/generateTopicWorker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +38,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../test" />
+    <property name="last_opened_file_path" value="E:/WebPro/ruaQAQ/vue-manage-system" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -95,7 +91,7 @@
       <updated>1585292557219</updated>
       <workItem from="1585292559238" duration="29519000" />
       <workItem from="1585460599702" duration="15278000" />
-      <workItem from="1585530482460" duration="14896000" />
+      <workItem from="1585530482460" duration="18420000" />
     </task>
     <servers />
   </component>
@@ -107,10 +103,10 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="755" y="322" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585561240637" />
-    <state x="869" y="304" key="FileChooserDialogImpl" timestamp="1585560987249">
+    <state x="869" y="304" key="FileChooserDialogImpl" timestamp="1585567267421">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585560987249" />
+    <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585567267421" />
     <state width="2005" height="510" key="GridCell.Tab.0.bottom" timestamp="1585485466808">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -163,10 +159,10 @@
       <screen x="-1920" y="0" width="1536" height="864" />
     </state>
     <state x="-1920" y="0" width="1550" height="951" maximized="true" key="dock-window-1/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585552646978" />
-    <state x="78" y="451" width="1550" height="951" maximized="true" key="dock-window-2" timestamp="1585560308996">
+    <state x="78" y="451" width="1550" height="951" maximized="true" key="dock-window-2" timestamp="1585567275173">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="78" y="451" width="1550" height="951" maximized="true" key="dock-window-2/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585560308996" />
+    <state x="78" y="451" width="1550" height="951" maximized="true" key="dock-window-2/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585567275173" />
     <state x="444" y="274" width="1550" height="951" key="dock-window-3" timestamp="1585560813148">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>

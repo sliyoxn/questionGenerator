@@ -34,7 +34,6 @@ let vm = new Vue({
 			}
 			const singleHandleCount = 1000;
 			let simpleExpressionSet = new Set();
-			simpleExpressionSet.add("ruaQAQ");
 			if (window.Worker) {
 				let loopCount = this.count / singleHandleCount + 1;
 				let hasHandleCount = 0;
@@ -57,6 +56,7 @@ let vm = new Vue({
 				this.isGenerating = false;
 				this.$message.success("生成完毕")
 			}
+			// 处理不支持Worker的浏览器
 			else {
 				let data = generateTopic({
 					from : this.from,
@@ -133,7 +133,7 @@ let vm = new Vue({
 							}
 							await this._sleepToNextTick();
 						}
-					}, 500);
+					}, standardAnswer.length < 1000 ? 0 : 300);
 				} else {
 					let tableData = getTableData({topic, studentAnswer, standardAnswer});
 					this.tableData = tableData;
