@@ -40,7 +40,8 @@ module.exports = function generateTopic(from, to, count) {
 			return {
 				text : str.slice(0, str.length - 1),
 				answer : answerArr,
-				warnMsg : "重试次数已达最大, 生成停止, 共计生成" + i + "题"
+				warnMsg : "重试次数已达最大, 生成停止, 共计生成" + i + "题",
+				count : i
 			}
 		}
 		str += expression;

@@ -1,4 +1,6 @@
+// 计算表达式
 const calEval = require("./src/calEval");
+// 生成题目
 const generateTopic = require("./src/generateTopic");
 const readFile = require("./util/readFile");
 const writeFile = require("./util/writeFile");
@@ -57,8 +59,9 @@ console.log(`计算${20 * loopCount}条表达式需要的时间为: ${new Date()
 
 console.log("---------------准备生成题目-----------------------");
 prevTime = new Date().getTime();
-let res = generateTopic(1,20,10000);
-console.log(`生成10000条题目需要的时间为: ${new Date().getTime() - prevTime}ms`);
+let topicCount = 100000;
+let res = generateTopic(1,20,topicCount);
+console.log(`生成${res.warnMsg ? res.count : topicCount}条题目需要的时间为: ${new Date().getTime() - prevTime}ms`);
 
 writeFile("../file/题目.txt", res.text);
 writeFile("../file/答案.txt", res.answer.join("\n"));

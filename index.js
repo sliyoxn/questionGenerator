@@ -14,15 +14,20 @@ let vm = new Vue({
 		isGenerating : false,
 		loadType : -1,
 		prevTopicWorker : null,
-		prevJudgeWorker : null
+		prevJudgeWorker : null,
+		percentage : 0
 	},
 	methods : {
 		downloadTopic() {
-			this._downloadFile(this.topic.trim());
+			this._downloadFile(this.topic.split("\n").map((content, index) => {
+				return `${index + 1}. ${content}`;
+			}).join("\n").trim());
 			if (this.isGenerating) this.$message.warning("还没有生成完毕, 现在下载会导致不完整");
 		},
 		downloadStandardAnswer() {
-			this._downloadFile(this.standardAnswer.replace(/,/gm,"\n").trim());
+			this._downloadFile(this.standardAnswer.replace(/,/gm,"\n").split("\n").map((content, index) => {
+				return `${index + 1}. ${content}`;
+			}).join("\n").trim());
 			if (this.isGenerating) this.$message.warning("还没有生成完毕, 现在下载会导致不完整");
 		},
 		handleClose() {
@@ -35,6 +40,7 @@ let vm = new Vue({
 			this.isGenerating = true;
 			this.topic = "";
 			this.standardAnswer = "";
+			this.percentage = 0;
 			if (this.prevTopicWorker) {
 				this.prevTopicWorker.terminate();
 				this.prevTopicWorker = null;
@@ -66,8 +72,10 @@ let vm = new Vue({
 						this.isGenerating = false;
 						return ;
 					}
+					this.percentage = Math.ceil((i + 1) / loopCount * 100);
 					await this._sleepToNextTick();
 				}
+				this.isGenerating = false;
 				this.$message.success("生成完毕");
 			}
 			// 处理不支持Worker的浏览器
@@ -108,13 +116,13 @@ let vm = new Vue({
 			let data = await readFile({file});
 			switch (this.loadType) {
 				case 1:
-					this.topic = data;
+					this.topic = data.replace(/\d+\.\s?/gm, "");
 					break;
 				case 2:
-					this.standardAnswer = data.replace(/\s/gm, ",");
+					this.standardAnswer = data.replace(/\d+\.\s?/gm, "").replace(/\s/gm, ",");
 					break;
 				case 3:
-					this.studentAnswer = data.replace(/\s/gm, ",");
+					this.studentAnswer = data.replace(/\d+\.\s?/gm, "").replace(/\s/gm, ",");
 					break;
 				default :
 					break;
@@ -176,7 +184,9 @@ let vm = new Vue({
 			this.$refs.fileInput.click();
 		},
 		downloadStudentAnswer() {
-			this._downloadFile(this.studentAnswer.replace(/,/gm,"\n"));
+			this._downloadFile(this.studentAnswer.replace(/,/gm,"\n").split("\n").map((content, index) => {
+				return `${index + 1}. ${content}`;
+			}).join("\n").trim());
 		},
 		_downloadFile(content) {
 			this.$prompt('请输入文件名', {

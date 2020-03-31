@@ -50,7 +50,8 @@
                 <el-input-number v-model="to" controls-position="right" :min="from + 1"></el-input-number>
                 <p class="rua">题目个数 : </p>
                 <el-input-number v-model="count" controls-position="right" :min="1"></el-input-number>
-                <el-button type="primary" @click="generateTopic">生成</el-button>
+                <el-button type="primary" @click="generateTopic" v-show="!isGenerating">生成</el-button>
+                <el-progress type="circle" :percentage="percentage" v-show="isGenerating" width="40" style="margin-left: 10px"></el-progress>
             </div>
         </div>
         <div class="center-box">
