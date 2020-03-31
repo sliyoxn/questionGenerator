@@ -35,6 +35,7 @@ let vm = new Vue({
 				this.prevJudgeWorker.terminate();
 				this.prevJudgeWorker = null;
 			}
+			this.tableData = [];
 		},
 		async generateTopic() {
 			this.isGenerating = true;
@@ -72,7 +73,7 @@ let vm = new Vue({
 						this.isGenerating = false;
 						return ;
 					}
-					this.percentage = Math.ceil((i + 1) / loopCount * 100);
+					this.percentage = Math.ceil(Math.min((i + 1) / loopCount * 100, 100));
 					await this._sleepToNextTick();
 				}
 				this.isGenerating = false;
@@ -140,6 +141,9 @@ let vm = new Vue({
 			studentAnswer = studentAnswer.split(",");
 			standardAnswer = standardAnswer.split(",");
 			topic = topic.split("\n");
+			if (standardAnswer[0] === "") {
+				standardAnswer = [];
+			}
 			let singleHandleCount = 500;
 			try {
 				if (window.Worker) {
@@ -170,6 +174,28 @@ let vm = new Vue({
 				this.$msssage.error(e);
 				this.loading = false;
 			}
+		},
+		async judgeSimple() {
+			let s = "";
+			let rightArr = [];
+			let errArr = [];
+			let answer = this.standardAnswer.split(",");
+			let stuAnswer = this.studentAnswer.split(",");
+			let data = [];
+			if (answer[0] === "") {
+				answer = [];
+			}
+			for (let i = 0; i < answer.length; i++) {
+				let o = {};
+				if (answer[i] !== stuAnswer[i]) {
+					errArr.push(i + 1);
+				} else {
+					rightArr.push(i + 1);
+				}
+			}
+			s +=
+				`Correct: ${rightArr.length} (${rightArr.join()})\nWrong: ${errArr.length} (${errArr.join()})`;
+			this._downloadFile(s);
 		},
 		loadTopic() {
 			this.loadType = 1;

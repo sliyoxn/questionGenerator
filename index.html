@@ -51,7 +51,7 @@
                 <p class="rua">题目个数 : </p>
                 <el-input-number v-model="count" controls-position="right" :min="1"></el-input-number>
                 <el-button type="primary" @click="generateTopic" v-show="!isGenerating">生成</el-button>
-                <el-progress type="circle" :percentage="percentage" v-show="isGenerating" width="40" style="margin-left: 10px"></el-progress>
+                <el-progress type="circle" :percentage="percentage" v-show="isGenerating" :width="40" style="margin-left: 10px"></el-progress>
             </div>
         </div>
         <div class="center-box">
@@ -75,7 +75,10 @@
                 <el-button type="primary" @click="downloadStudentAnswer">下 载 学 生 答 案</el-button>
 
             </div>
-            <el-button type="primary" @click="judge">判 卷</el-button>
+            <div class="judge-box">
+                <el-button type="primary" @click="judgeSimple">下 载 判 卷 结 果</el-button>
+                <el-button type="primary" @click="judge">显 示 详 细 结 果</el-button>
+            </div>
         </div>
 
     </div>

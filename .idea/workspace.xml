@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/file/Grade.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file/判卷结果.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/判卷结果.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file/学生答案.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/学生答案.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file/答案.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/答案.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file/题目.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/题目.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/judge.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/judge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/generateTopic.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +42,7 @@
     <property name="last_opened_file_path" value="E:/WebPro/ruaQAQ/vue-manage-system" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -100,7 +94,7 @@
       <workItem from="1585292559238" duration="29519000" />
       <workItem from="1585460599702" duration="15278000" />
       <workItem from="1585530482460" duration="28549000" />
-      <workItem from="1585615517921" duration="2572000" />
+      <workItem from="1585615517921" duration="5073000" />
     </task>
     <servers />
   </component>
@@ -168,6 +162,10 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state width="2005" height="392" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585571716634" />
+    <state x="526" y="218" key="SettingsEditor" timestamp="1585618835469">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="526" y="218" key="SettingsEditor/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585618835469" />
     <state x="-1920" y="0" width="1550" height="951" maximized="true" key="dock-window-1" timestamp="1585552646978">
       <screen x="-1920" y="0" width="1536" height="864" />
     </state>

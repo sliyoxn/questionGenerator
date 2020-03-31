@@ -123,3 +123,10 @@ body {
     height: 100%;
     overflow: auto;
 }
+.judge-box {
+    display: flex;
+}
+
+.judge-box .el-button {
+    flex: 1 1;
+}
