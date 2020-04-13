@@ -26,13 +26,15 @@ module.exports = function generateTopic(from, to, count) {
 	for (let i = 0; i < count; i++) {
 		let expressionObj = getExpression(from, to);
 		let expression = expressionObj.expression;
+		let hasNegativeNumber = expressionObj.hasNegativeNumber;
 		simpleExpression = expressionObj.simpleExpression;
 		let curLoopCount = 0;
 		let calRes = calEval(expression);
-		while ((calRes.hasNegativeNumber || simpleExpressionSet.has(simpleExpression)) && curLoopCount < maxLoopCount) {
+		while ((hasNegativeNumber === true || calRes.hasNegativeNumber || simpleExpressionSet.has(simpleExpression)) && curLoopCount < maxLoopCount) {
 			expressionObj = getExpression(from, to);
 			expression = expressionObj.expression;
 			simpleExpression = expressionObj.simpleExpression;
+			hasNegativeNumber = expressionObj.hasNegativeNumber;
 			calRes = calEval(expression);
 			curLoopCount ++;
 		}
@@ -55,7 +57,7 @@ module.exports = function generateTopic(from, to, count) {
 		text : str.slice(0, str.length - 1),
 		answer : answerArr
 	}
-}
+};
 
 
 function getExpression(from, to) {
@@ -67,23 +69,25 @@ function getExpression(from, to) {
 	let firstIndexBracketIndex = getRandom(1,operatorCount - 1);
 	let operandArr = [leftVal];
 	let operatorArr = [operator];
+	let hasNegativeNumberObj = {
+		hasNegativeNumber : false
+	};
 	if (useFirstIndexBracket && operatorCount >= 2) {
-		// debugger;
 		expression += `(${leftVal} ${operator} `;
 		operator = getRandomOperator();
 		operatorArr.push(operator);
-		expression += `${randomExpression(from, to, firstIndexBracketIndex - 1, operandArr, operatorArr)}) ${operator} `;
-		expression += `${randomExpression(from, to, operatorCount - firstIndexBracketIndex - 1, operandArr, operatorArr)}`
+		expression += `${randomExpression(from, to, firstIndexBracketIndex - 1, operandArr, operatorArr, hasNegativeNumberObj)}) ${operator} `;
+		expression += `${randomExpression(from, to, operatorCount - firstIndexBracketIndex - 1, operandArr, operatorArr,hasNegativeNumberObj)}`
 	} else {
 		expression += `${leftVal} ${operator} `;
-		expression += `${randomExpression(from, to, operatorCount - 1, operandArr, operatorArr)}`
+		expression += `${randomExpression(from, to, operatorCount - 1, operandArr, operatorArr, hasNegativeNumberObj)}`
 	}
 
 	let simpleExpression = getSimpleExpression(operandArr, operatorArr);
-
 	return {
 		expression,
-		simpleExpression
+		simpleExpression,
+		hasNegativeNumber : hasNegativeNumberObj.hasNegativeNumber,
 	}
 }
 
@@ -139,8 +143,9 @@ function getRandomOperand(from, to) {
  * @param {Number} remain
  * @param {Array} operandArr
  * @param {Array} operatorArr
+ * @param {Object} hasNegativeNumberObj 一个含有hasNegativeNumber标识的对象
  */
-function randomExpression(from, to, remain, operandArr, operatorArr) {
+function randomExpression(from, to, remain, operandArr, operatorArr, hasNegativeNumberObj) {
 
 	let leftVal = getRandomOperand(from, to);
 	let useBracket = !!getRandom(0,1);
@@ -148,7 +153,11 @@ function randomExpression(from, to, remain, operandArr, operatorArr) {
 	if (remain) {
 		let operator = getRandomOperator();
 		operatorArr.push(operator);
-		let rightExpress = randomExpression(from, to, remain - 1, operandArr, operatorArr);
+		let rightExpress = randomExpression(from, to, remain - 1, operandArr, operatorArr, hasNegativeNumberObj);
+		if (calEval(`${leftVal} ${operator} ${rightExpress}`).hasNegativeNumber) {
+			hasNegativeNumberObj.hasNegativeNumber = true;
+			return "";
+		}
 		if (useBracket) {
 			return `(${leftVal} ${operator} ${rightExpress})`;
 		} else {

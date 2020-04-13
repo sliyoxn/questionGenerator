@@ -103,19 +103,27 @@ function calEval(eval) {
 		} else {
 			let a = operandStack.pop();
 			let b = operandStack.pop();
-			let res = Fraction.calculate(b, a, o);
-			if (res.value < 0) {
-				hasNegativeNumber = true;
+			if (a != null && b != null) {
+				let res = Fraction.calculate(b, a, o);
+				if (res.value < 0 || res.value === Infinity) {
+					hasNegativeNumber = true;
+					return {
+						val: res.value === Infinity ? Infinity : "-99.99",
+						hasNegativeNumber
+					}
+				}
+				operandStack.push(res);
+			} else {
 				return {
-					val: "-1",
-					hasNegativeNumber
+					val : o === "-" ? - a : a,
+					hasNegativeNumber: o === "-"
 				}
 			}
-			operandStack.push(res);
 		}
 	}
+	let val = operandStack.pop();
 	return {
-		val : operandStack.pop().toMixedString(),
+		val : val instanceof Fraction ? val.toMixedString() : val,
 		hasNegativeNumber
 	}
 }

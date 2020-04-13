@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/src/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/calEval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/src/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/generateTopic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.1" />
-    <property name="last_opened_file_path" value="E:/WebPro/ruaQAQ/vue-manage-system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -94,7 +96,12 @@
       <workItem from="1585292559238" duration="29519000" />
       <workItem from="1585460599702" duration="15278000" />
       <workItem from="1585530482460" duration="28549000" />
-      <workItem from="1585615517921" duration="5073000" />
+      <workItem from="1585615517921" duration="12172000" />
+      <workItem from="1585719710515" duration="1196000" />
+      <workItem from="1585826937925" duration="855000" />
+      <workItem from="1585841779186" duration="4316000" />
+      <workItem from="1585992297544" duration="2452000" />
+      <workItem from="1586773475998" duration="2477000" />
     </task>
     <servers />
   </component>
@@ -110,10 +117,10 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="755" y="322" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585561240637" />
-    <state x="869" y="304" key="FileChooserDialogImpl" timestamp="1585567267421">
+    <state x="869" y="304" key="FileChooserDialogImpl" timestamp="1586248069535">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585567267421" />
+    <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586248069535" />
     <state width="2005" height="424" key="GridCell.Tab.0.bottom" timestamp="1585580354010">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -178,10 +185,10 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="444" y="274" width="1550" height="951" key="dock-window-3/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585560813148" />
-    <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585615787045">
+    <state x="703" y="309" width="642" height="534" key="find.popup" timestamp="1585827026111">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="703" y="309" width="642" height="534" key="find.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585615787045" />
+    <state x="703" y="309" width="642" height="534" key="find.popup/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585827026111" />
     <state x="681" y="269" key="run.anything.popup" timestamp="1585479991152">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>

@@ -61,14 +61,7 @@ let vm = new Vue({
 						count : thisHandleCount,
 						simpleExpressionSet
 					});
-					// if (i === 0) {
-					// 	console.log("第一版题目数据加载出来用的时间为(10000条题目):" + (new Date().getTime() - prevTime) + "ms");
-					// }
-					// if (i === loopCount - 1) {
-					// 	console.log("全部题目数据加载出来用的时间为(10000条题目):" + (new Date().getTime() - prevTime) + "ms");
-					// }
 					simpleExpressionSet = data.simpleExpressionSet;
-					// console.log(data.simpleExpressionSet === simpleExpressionSet);
 					if (!this._handleData(data, i === 0 ? Constants.worker.RELOAD : Constants.worker.ADD)) {
 						this.isGenerating = false;
 						return ;
