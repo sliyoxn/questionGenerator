@@ -156,7 +156,6 @@ function randomExpression(from, to, remain, operandArr, operatorArr, hasNegative
 		let rightExpress = randomExpression(from, to, remain - 1, operandArr, operatorArr, hasNegativeNumberObj);
 		if (calEval(`${leftVal} ${operator} ${rightExpress}`).hasNegativeNumber) {
 			hasNegativeNumberObj.hasNegativeNumber = true;
-			return "";
 		}
 		if (useBracket) {
 			return `(${leftVal} ${operator} ${rightExpress})`;

@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b786582b-8477-45fc-9497-2a0097c165c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/calEval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file/学生答案.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/学生答案.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file/答案.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/答案.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file/题目.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file/题目.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/src/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/generateTopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/calEval.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/calEval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/generateTopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/generateTopic.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
       <recent name="E:\WebProject\test002\homework\questionGenerator\worker\util" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.judge.js">
+  <component name="RunManager" selected="Node.js.index.js">
     <configuration name="calEval.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/src/calEval.js" working-dir="$PROJECT_DIR$/test">
       <method v="2" />
     </configuration>
@@ -76,8 +77,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.judge.js" />
         <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.judge.js" />
         <item itemvalue="Node.js.writeFile.js" />
         <item itemvalue="Node.js.generateTopic.js" />
       </list>
@@ -101,7 +102,7 @@
       <workItem from="1585826937925" duration="855000" />
       <workItem from="1585841779186" duration="4316000" />
       <workItem from="1585992297544" duration="2452000" />
-      <workItem from="1586773475998" duration="2477000" />
+      <workItem from="1586773475998" duration="3422000" />
     </task>
     <servers />
   </component>
@@ -121,22 +122,22 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="869" y="304" key="FileChooserDialogImpl/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586248069535" />
-    <state width="2005" height="424" key="GridCell.Tab.0.bottom" timestamp="1585580354010">
+    <state width="2005" height="356" key="GridCell.Tab.0.bottom" timestamp="1586776386010">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="424" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585580354010" />
-    <state width="2005" height="424" key="GridCell.Tab.0.center" timestamp="1585580354010">
+    <state width="2005" height="356" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586776386010" />
+    <state width="2005" height="356" key="GridCell.Tab.0.center" timestamp="1586776386010">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="424" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585580354010" />
-    <state width="2005" height="424" key="GridCell.Tab.0.left" timestamp="1585580354010">
+    <state width="2005" height="356" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586776386010" />
+    <state width="2005" height="356" key="GridCell.Tab.0.left" timestamp="1586776386010">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="424" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585580354010" />
-    <state width="2005" height="424" key="GridCell.Tab.0.right" timestamp="1585580354010">
+    <state width="2005" height="356" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586776386010" />
+    <state width="2005" height="356" key="GridCell.Tab.0.right" timestamp="1586776386010">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2005" height="424" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585580354010" />
+    <state width="2005" height="356" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586776386010" />
     <state width="2005" height="392" key="GridCell.Tab.1.bottom" timestamp="1585571716634">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -173,10 +174,10 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="526" y="218" key="SettingsEditor/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585618835469" />
-    <state x="-1920" y="0" width="1550" height="951" maximized="true" key="dock-window-1" timestamp="1585552646978">
-      <screen x="-1920" y="0" width="1536" height="864" />
+    <state x="296" y="221" width="1550" height="951" key="dock-window-1" timestamp="1586776900198">
+      <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="-1920" y="0" width="1550" height="951" maximized="true" key="dock-window-1/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1585552646978" />
+    <state x="296" y="221" width="1550" height="951" key="dock-window-1/-1920.0.1536.864/0.0.2048.1152@0.0.2048.1152" timestamp="1586776900198" />
     <state x="78" y="451" width="1550" height="951" maximized="true" key="dock-window-2" timestamp="1585567275173">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>

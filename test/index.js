@@ -59,7 +59,7 @@ console.log(`计算${20 * loopCount}条表达式需要的时间为: ${new Date()
 
 console.log("---------------准备生成题目-----------------------");
 prevTime = new Date().getTime();
-let topicCount = 100000;
+let topicCount = 20000;
 let res = generateTopic(1,20,topicCount);
 console.log(`生成${res.warnMsg ? res.count : topicCount}条题目需要的时间为: ${new Date().getTime() - prevTime}ms`);
 
